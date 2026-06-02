@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - The HERitage Collective</title>
+    <meta name="description" content="Privacy Policy for The HERitage Collective. Learn how we collect, use, and protect your data.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        // 2. SET FONT TO RALEWAY
+                        sans: ['Raleway', 'sans-serif'],
+                        serif: ['Raleway', 'serif'], 
+                    },
+                    colors: {
+                        // 3. APPLY NEW COLOR PALETTE
+                        primary: {
+                            DEFAULT: '#9E2424', /* Heritage Red */
+                            foreground: '#FFFFF5',
+                            light: '#AF7B79',   /* Mauve */
+                            dark: '#644841',    /* Dark Clay */
+                        },
+                        secondary: {
+                            DEFAULT: '#99754F', /* Bronze */
+                            foreground: '#FFFFF5',
+                            light: '#AA9A79',   /* Sand */
+                            dark: '#3E3434',
+                        },
+                        accent: {
+                            DEFAULT: '#AA9A79',
+                            foreground: '#3E3434',
+                        },
+                        muted: {
+                            DEFAULT: '#F5E6E0', /* Light reddish-cream for muted backgrounds */
+                            foreground: '#644841',
+                        },
+                        background: '#FFFFF5', /* Cream/Ivory */
+                        foreground: '#3E3434', /* Dark Brown */
+                        border: '#AA9A79',
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 6px -1px rgba(158, 36, 36, 0.1), 0 2px 4px -1px rgba(158, 36, 36, 0.06)',
+                        'medium': '0 10px 15px -3px rgba(62, 52, 52, 0.1), 0 4px 6px -2px rgba(62, 52, 52, 0.05)',
+                        'large': '0 20px 25px -5px rgba(158, 36, 36, 0.1), 0 10px 10px -5px rgba(158, 36, 36, 0.04)',
+                    },
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Base styles */
+        body {
+            background-color: #FFFFF5;
+            color: #3E3434;
+        }
+
+        /* Nav Link Hover Effects */
+        .nav-link:hover, .mobile-nav-link:hover {
+            color: #9E2424; 
+            background-color: rgba(175, 123, 121, 0.1);
+        }
+
+        /* Typography for the legal text - Updated Colors */
+        .prose h2 {
+            color: #9E2424; /* Heritage Red */
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            border-bottom: 1px solid #AA9A79; /* Sand border */
+            padding-bottom: 0.5rem;
+        }
+        .prose h3 {
+            color: #3E3434; /* Dark Brown */
+            margin-top: 1.5rem;
+            margin-bottom: 0.75rem;
+            font-size: 1.125rem;
+            font-weight: 600;
+        }
+        .prose p {
+            margin-bottom: 1rem;
+            line-height: 1.75;
+            color: #3E3434;
+        }
+        .prose ul {
+            list-style-type: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            color: #3E3434;
+        }
+        .prose li {
+            margin-bottom: 0.5rem;
+        }
+        .prose strong {
+            color: #644841; /* Dark Clay */
+        }
+        
+        /* Custom link styling within prose */
+        .prose a {
+            color: #9E2424;
+            text-decoration: underline;
+            transition: color 0.2s;
+        }
+        .prose a:hover {
+            color: #99754F; /* Bronze */
+        }
+
+        /* Custom Scrollbar for a premium feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #FFFFF5; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #AA9A79; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #99754F; 
+        }
+    </style>
+</head>
+
+<body class="min-h-screen font-sans flex flex-col bg-background text-foreground">
+    
+    <header class="bg-[#FFFFF5]/95 backdrop-blur-md sticky top-0 z-50 w-full border-b border-[#AA9A79]/30 shadow-soft">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <div class="flex items-center">
+                    <a href="/" style="text-decoration: none;">
+                        <h1 style="color: #3E3434; font-size: 28px; font-weight: 700; margin: 0; transition: color 0.3s;" onmouseover="this.style.color='#9E2424'" onmouseout="this.style.color='#3E3434'">
+                            HERitage&reg;
+                        </h1>
+                    </a>
+                </div>
+
+                <nav class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="/" class="nav-link px-3 py-2 rounded-md text-sm font-semibold uppercase tracking-wider transition-all duration-300">Home</a>
+                        <a href="/#about" class="nav-link px-3 py-2 rounded-md text-sm font-semibold uppercase tracking-wider transition-all duration-300">About</a>
+                        <a href="/#calendar" class="nav-link px-3 py-2 rounded-md text-sm font-semibold uppercase tracking-wider transition-all duration-300">Calendar</a>
+                        <a href="/#contact" class="nav-link px-3 py-2 rounded-md text-sm font-semibold uppercase tracking-wider transition-all duration-300">Contact</a>
+                    </div>
+                </nav>
+
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="text-[#3E3434] hover:text-[#9E2424] p-2 transition-colors">
+                        <i data-lucide="menu" class="h-6 w-6" id="menu-icon"></i>
+                        <i data-lucide="x" class="h-6 w-6 hidden" id="close-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="md:hidden hidden">
+                <div class="px-4 py-6 space-y-4 bg-[#FFFFF5] border-t border-[#AA9A79]/30 shadow-lg">
+                    <a href="/" class="mobile-nav-link block px-3 py-2 text-base font-bold text-[#3E3434] transition-colors">Home</a>
+                    <a href="/#about" class="mobile-nav-link block px-3 py-2 text-base font-bold text-[#3E3434] transition-colors">About</a>
+                    <a href="/#calendar" class="mobile-nav-link block px-3 py-2 text-base font-bold text-[#3E3434] transition-colors">Calendar</a>
+                    <a href="/#contact" class="mobile-nav-link block px-3 py-2 text-base font-bold text-[#3E3434] transition-colors">Contact</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
+        
+        <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-medium border border-[#AA9A79]/20 overflow-hidden">
+            <div class="bg-[#9E2424]/5 p-8 border-b border-[#AA9A79]/20">
+                <h1 class="text-3xl md:text-4xl font-bold text-[#9E2424] mb-2">Privacy Policy</h1>
+                <p class="text-[#99754F] font-medium">Last Updated: <span id="current-date">December 2025</span></p>
+            </div>
+
+            <div class="p-8 md:p-12 prose max-w-none">
+                
+                <h2>1. Introduction</h2>
+                <p>
+                    Welcome to <strong>The HERitage Collective</strong>. We are committed to protecting the privacy and security of our community members, partners, investors, and website visitors.
+                </p>
+                <p>
+                    This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website, register for our events (such as the MMC Roundtables), or engage with our strategic networks. By accessing our services or providing your information, you consent to the practices described in this policy.
+                </p>
+
+                <div class="h-px bg-[#AA9A79]/30 my-8"></div>
+
+                <h2>2. Information We Collect</h2>
+                <p>We collect information to facilitate deal-flow, organize high-level interventions, and improve our ecosystem. This includes:</p>
+
+                <h3>A. Personal Information</h3>
+                <ul>
+                    <li><strong>Identity Data:</strong> Name, gender, date of birth (if applicable).</li>
+                    <li><strong>Contact Data:</strong> Email address, phone number, physical address, and LinkedIn/social media handles.</li>
+                    <li><strong>Professional Data:</strong> Job title, company name, industry sector, and professional biography.</li>
+                </ul>
+
+                <h3>B. Business & Financial Information</h3>
+                <ul>
+                    <li><strong>For Entrepreneurs:</strong> Business revenue data, pitch decks, funding history, and operational metrics.</li>
+                    <li><strong>For Investors/Partners:</strong> Investment criteria, portfolio details, and capital deployment capacity.</li>
+                    <li><em>Note: High-level financial data shared during private roundtables is treated with strict confidentiality.</em></li>
+                </ul>
+
+                <h3>C. Technical Data</h3>
+                <ul>
+                    <li>IP address, browser type, operating system, and access times.</li>
+                    <li>Information collected via cookies (see Section 7).</li>
+                </ul>
+
+                <h3>D. Multimedia</h3>
+                <ul>
+                    <li>Photographs and video recordings taken during our events (e.g., MMC Trade Conference) for use in press releases, reports, and promotional materials.</li>
+                </ul>
+
+                <h2>3. How We Use Your Information</h2>
+                <p>We use your data to drive the "Context-Capital" connection and ensure measurable growth. Specifically, we use it to:</p>
+                <ul>
+                    <li><strong>Facilitate Connections:</strong> Match women-led enterprises with potential investors and strategic partners.</li>
+                    <li><strong>Event Management:</strong> Organize roundtables, send invitations, and manage logistics for events like the HERitage Collective MMC.</li>
+                    <li><strong>Research & Insights:</strong> Aggregate data to create reports on the gender gap, economic opportunities, and market potential (all aggregated data is anonymized).</li>
+                    <li><strong>Communication:</strong> Send newsletters, updates on our 2026 roadmap, and industry highlights.</li>
+                    <li><strong>Compliance:</strong> Fulfill legal obligations under Nigerian and international laws.</li>
+                </ul>
+
+                <h2>4. Sharing Your Information</h2>
+                <p>We do not sell your personal data. However, we may share information in the following strategic instances:</p>
+                <ul>
+                    <li><strong>Strategic Partners:</strong> With entities like Future Africa or specific infrastructure partners only when necessary to facilitate a specific deal or partnership you have expressed interest in.</li>
+                    <li><strong>Service Providers:</strong> Third-party vendors who assist with website hosting, email marketing, and event coordination.</li>
+                    <li><strong>Legal Requirements:</strong> If required by law or to protect the rights and safety of The HERitage Collective and its members.</li>
+                </ul>
+
+                <h2>5. Data Security</h2>
+                <p>
+                    We employ administrative, technical, and physical security measures to protect your personal information. While we strive to protect your data, please be aware that no method of transmission over the Internet is 100% secure.
+                </p>
+
+                <h2>6. Your Rights (NDPR & General)</h2>
+                <p>Depending on your location, you have the following rights regarding your data:</p>
+                <ul>
+                    <li><strong>Right to Access:</strong> Request copies of the personal data we hold about you.</li>
+                    <li><strong>Right to Rectification:</strong> Request correction of inaccurate information.</li>
+                    <li><strong>Right to Erasure:</strong> Request that we delete your personal data ("Right to be Forgotten").</li>
+                    <li><strong>Right to Withdraw Consent:</strong> You may unsubscribe from our communications at any time.</li>
+                </ul>
+
+                <h2>7. Cookies and Tracking</h2>
+                <p>
+                    Our website uses cookies to enhance user experience and analyze site traffic. You can choose to disable cookies through your browser settings, though this may affect your ability to access certain features of the site.
+                </p>
+
+                <h2>8. Third-Party Websites</h2>
+                <p>
+                    Our website or newsletters may contain links to third-party websites (e.g., news articles, partner portfolios). We are not responsible for the privacy practices or content of those third-party sites.
+                </p>
+
+                <div class="h-px bg-[#AA9A79]/30 my-8"></div>
+
+                <h2>9. Contact Us</h2>
+                <p>If you have questions or comments about this Privacy Policy, please contact us at:</p>
+                
+                <div class="bg-[#F5E6E0]/50 p-6 rounded-lg border border-[#AA9A79]/30 mt-4">
+                    <p class="font-bold text-lg mb-2 text-[#9E2424]">The HERitage Collective</p>
+                    <div class="flex items-center gap-3 mb-2">
+                        <i data-lucide="mail" class="h-5 w-5 text-[#9E2424]"></i>
+                        <a href="mailto:info@heritagecollectiv.com" class="text-[#9E2424] hover:text-[#3E3434] transition">info@heritagecollectiv.com</a>
+                    </div>
+                    <div class="flex items-start gap-3 text-[#3E3434]">
+                        <i data-lucide="map-pin" class="h-5 w-5 text-[#9E2424] mt-1"></i>
+                        <span>Nigeria Office
+HERitage House, Abuja,
+FCT, Nigeria. <br> Rwanda Office
+KG 54 Avenue, Kigali,
+Rwanda.</span>
+                    </div>
+                </div>
+
+                <div class="mt-12 p-4 bg-[#AA9A79]/10 border-l-4 border-[#9E2424] rounded-r-md">
+                    <div class="flex">
+                        <div class="flex-shrink-0">
+                            <i data-lucide="alert-circle" class="h-5 w-5 text-[#9E2424]"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-sm text-[#644841]">
+                                <strong>Legal Disclaimer:</strong> This privacy policy is for informational purposes and does not constitute legal advice. Please consult with legal counsel to ensure full compliance with the Nigeria Data Protection Regulation (NDPR) and other applicable laws.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-[#3E3434] text-[#FFFFF5] border-t border-[#644841]" id="press">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+                
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-white">HERitage&reg; Collective.</h3>
+                    <p class="text-[#AA9A79] leading-relaxed font-normal max-w-sm">
+                        A launchpad for African women leaders and their champions. We gather Africa’s most dynamic women for powerful days of ideas, influence, and investment.
+                    </p>
+                    
+                    <div class="flex space-x-5">
+                        <a href="linkedin.com/company/heritagecollective" target="_blank" 
+                           class="text-[#AA9A79] hover:text-[#FFFFF5] transition-colors transform hover:-translate-y-1">
+                            <i data-lucide="linkedin" class="h-6 w-6"></i>
+                        </a>
+                        <a href="https://www.instagram.com/heritage.collectiv/" target="_blank" 
+                           class="text-[#AA9A79] hover:text-[#FFFFF5] transition-colors transform hover:-translate-y-1">
+                            <i data-lucide="instagram" class="h-6 w-6"></i>
+                        </a>
+                        <a href="#" target="_blank" 
+                           class="text-[#AA9A79] hover:text-[#FFFFF5] transition-colors transform hover:-translate-y-1">
+                            <i data-lucide="youtube" class="h-6 w-6"></i>
+                        </a>
+                    </div>
+                    <div class="h-px bg-[#644841] w-full"></div>
+                    <div class="space-y-2">
+                        <a href="mailto:info@heritagecollectiv.com" class="flex items-center gap-3 hover:text-[#9E2424] transition">
+                            <i data-lucide="mail" class="h-5 w-5 text-[#AA9A79]"></i>
+                            <span>info@heritagecollectiv.com</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-6">Contact & Locations</h4>
+                    <div class="space-y-6 text-[#AA9A79]">
+                        <div class="space-y-4">
+                            <div class="flex gap-3 items-start">
+                                <i data-lucide="map-pin" class="h-5 w-5 text-[#9E2424] mt-1 shrink-0"></i>
+                                <div>
+                                    <span class="block text-white font-medium text-sm uppercase tracking-wide">Nigeria Office</span>
+                                    <span class="text-sm">HERitage House, Abuja,<br>FCT, Nigeria.</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-3 items-start">
+                                <i data-lucide="map-pin" class="h-5 w-5 text-[#9E2424] mt-1 shrink-0"></i>
+                                <div>
+                                    <span class="block text-white font-medium text-sm uppercase tracking-wide">Rwanda Office</span>
+                                    <span class="text-sm">KG 54 Avenue, Kigali,<br>Rwanda.</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-6">Latest News & Blog</h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="#" target="_blank" class="group flex items-start gap-3">
+                                <div class="bg-[#644841] p-2 rounded group-hover:bg-[#9E2424] transition duration-300">
+                                    <i data-lucide="newspaper" class="h-5 w-5 text-[#AA9A79] group-hover:text-white"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-white font-medium group-hover:text-[#9E2424] transition">HERitage x MMC 7.0 Roundtable</span>
+                                    <span class="text-xs text-[#AA9A79]">Dec 05, 2025</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" target="_blank" class="group flex items-start gap-3">
+                                <div class="bg-[#644841] p-2 rounded group-hover:bg-[#9E2424] transition duration-300">
+                                    <i data-lucide="newspaper" class="h-5 w-5 text-[#AA9A79] group-hover:text-white"></i>
+                                </div>
+                                <div>
+                                    <span class="block text-white font-medium group-hover:text-[#9E2424] transition">HERitage Collective Launches</span>
+                                    <span class="text-xs text-[#AA9A79]">May 10, 2025</span>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-[#644841] mt-16 pt-8 text-center">
+                <p class="text-sm text-[#AA9A79]">
+                    © 2026 HERitage Collective. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Update current date
+        const dateSpan = document.getElementById('current-date');
+        const now = new Date();
+        const options = { year: 'numeric', month: 'long', day: 'numeric' };
+        if(dateSpan) dateSpan.innerText = now.toLocaleDateString('en-US', options);
+
+        // Mobile Menu Toggle Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        if (btn && menu) {
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                menuIcon.classList.toggle('hidden');
+                closeIcon.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>

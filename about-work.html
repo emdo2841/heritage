@@ -1,0 +1,820 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HERitage Collective</title>
+    <meta name="description" content="Empowering women Leaders">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Raleway', 'sans-serif'],
+                        serif: ['Raleway', 'serif'],
+                    },
+                    colors: {
+                        primary: {
+                            DEFAULT: '#9E2424', /* Deep Red */
+                            foreground: '#FFFFF5',
+                            light: '#AF7B79',   /* Rose/Mauve */
+                            dark: '#644841',    /* Dark Clay */
+                        },
+                        secondary: {
+                            DEFAULT: '#99754F', /* Bronze */
+                            foreground: '#FFFFF5',
+                            light: '#AA9A79',   /* Beige/Tan */
+                            dark: '#3E3434',
+                        },
+                        background: '#FFFFF5', /* Cream */
+                        foreground: '#3E3434', /* Dark Grey */
+                        border: '#E8E0D5',
+                    },
+                    boxShadow: {
+                        'soft': '0 4px 6px -1px rgba(158, 36, 36, 0.1), 0 2px 4px -1px rgba(158, 36, 36, 0.06)',
+                        'medium': '0 10px 15px -3px rgba(62, 52, 52, 0.1), 0 4px 6px -2px rgba(62, 52, 52, 0.05)',
+                        'glow': '0 0 40px rgba(158, 36, 36, 0.25)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #FFFFF5;
+            color: #3E3434;
+            scroll-behavior: smooth;
+        }
+
+        .nav-link:hover,
+        .mobile-nav-link:hover {
+            color: #9E2424;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen font-sans bg-background text-foreground">
+
+    <header
+        class="bg-[#FFFFF5]/95 backdrop-blur-md sticky top-0 z-50 w-full border-b border-[#AA9A79]/30 shadow-soft header-entrance">
+        <style>
+            /* --- 1. Mount Animations --- */
+
+            /* Slide Header Down */
+            @keyframes slideDown {
+                from {
+                    transform: translateY(-100%);
+                    opacity: 0;
+                }
+
+                to {
+                    transform: translateY(0);
+                    opacity: 1;
+                }
+            }
+
+            /* Fade in elements (Logo & Links) */
+            @keyframes fadeInStagger {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            .header-entrance {
+                animation: slideDown 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+            }
+
+            /* Stagger the appearance of logo and nav items */
+            .stagger-1 {
+                animation: fadeInStagger 0.6s ease-out 0.3s forwards;
+                opacity: 0;
+            }
+
+            .stagger-2 {
+                animation: fadeInStagger 0.6s ease-out 0.4s forwards;
+                opacity: 0;
+            }
+
+            .stagger-3 {
+                animation: fadeInStagger 0.6s ease-out 0.5s forwards;
+                opacity: 0;
+            }
+
+            .stagger-4 {
+                animation: fadeInStagger 0.6s ease-out 0.6s forwards;
+                opacity: 0;
+            }
+
+            .stagger-5 {
+                animation: fadeInStagger 0.6s ease-out 0.7s forwards;
+                opacity: 0;
+            }
+
+            /* --- 2. Hover Animations --- */
+
+            /* Elegant Underline Effect */
+            .nav-link-animated {
+                position: relative;
+                display: inline-block;
+            }
+
+            .nav-link-animated::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: #9E2424;
+                /* Brand Red */
+                transform: scaleX(0);
+                transform-origin: bottom right;
+                transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+            }
+
+            .nav-link-animated:hover::after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+            }
+
+            .nav-link-animated:hover {
+                color: #9E2424;
+            }
+
+            /* Mobile Menu Slide In */
+            #mobile-menu {
+                transition: all 0.3s ease-in-out;
+                transform-origin: top;
+            }
+
+            #mobile-menu.hidden {
+                opacity: 0;
+                transform: scaleY(0);
+                height: 0;
+            }
+
+            #mobile-menu:not(.hidden) {
+                opacity: 1;
+                transform: scaleY(1);
+                height: auto;
+            }
+        </style>
+
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex h-16 items-center justify-between">
+                <div class="flex items-center stagger-1">
+                    <h1 class="text-2xl font-bold cursor-pointer group">
+                        <a href="/" style="text-decoration: none;">
+                            <h1
+                                class="text-[#3E3434] text-[28px] font-bold m-0 transition-all duration-300 group-hover:text-[#9E2424] group-hover:scale-105">
+                                HERitage&reg;
+                            </h1>
+                        </a>
+                    </h1>
+                </div>
+
+                <nav class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-6">
+                        <a href="#about"
+                            class="stagger-2 nav-link-animated px-3 py-2 text-sm font-semibold uppercase tracking-wider text-[#3E3434] transition-colors duration-300">
+                            About
+                        </a>
+                        <a href="#calendar"
+                            class="stagger-3 nav-link-animated px-3 py-2 text-sm font-semibold uppercase tracking-wider text-[#3E3434] transition-colors duration-300">
+                            Calendar
+                        </a>
+                        <a href="#contact"
+                            class="stagger-4 nav-link-animated px-3 py-2 text-sm font-semibold uppercase tracking-wider text-[#3E3434] transition-colors duration-300">
+                            Contact
+                        </a>
+                        <a href="#press"
+                            class="stagger-5 nav-link-animated px-3 py-2 text-sm font-semibold uppercase tracking-wider text-[#3E3434] transition-colors duration-300">
+                            Press
+                        </a>
+                    </div>
+                </nav>
+
+                <div class="md:hidden stagger-2">
+                    <button id="mobile-menu-btn"
+                        class="text-[#3E3434] hover:text-[#9E2424] p-2 transition-colors transform hover:rotate-90 duration-300">
+                        <i data-lucide="menu" class="h-6 w-6" id="menu-icon"></i>
+                        <i data-lucide="x" class="h-6 w-6 hidden" id="close-icon"></i>
+                    </button>
+                </div>
+            </div>
+
+            <div id="mobile-menu" class="md:hidden hidden overflow-hidden">
+                <div class="px-4 py-6 space-y-4 bg-[#FFFFF5] border-t border-[#AA9A79]/30 shadow-lg">
+                    <a href="#about"
+                        class="mobile-nav-link block px-3 py-2 text-base font-bold text-[#3E3434] hover:text-[#9E2424] hover:translate-x-2 transition-transform duration-300">About</a>
+                    <a href="#calendar"
+                        class="mobile-nav-link block px-3 py-2 text-base font-bold text-[#3E3434] hover:text-[#9E2424] hover:translate-x-2 transition-transform duration-300">Calendar</a>
+                    <a href="#contact"
+                        class="mobile-nav-link block px-3 py-2 text-base font-bold text-[#3E3434] hover:text-[#9E2424] hover:translate-x-2 transition-transform duration-300">Contact</a>
+                    <a href="#press"
+                        class="mobile-nav-link block px-3 py-2 text-base font-bold text-[#3E3434] hover:text-[#9E2424] hover:translate-x-2 transition-transform duration-300">Press</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+            const menuIcon = document.getElementById('menu-icon');
+            const closeIcon = document.getElementById('close-icon');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+                menuIcon.classList.toggle('hidden');
+                closeIcon.classList.toggle('hidden');
+            });
+
+            // Initialize Lucide icons if you are using the CDN
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+        });
+    </script>
+
+    <main class="h-full bg-[#FFFFF5]">
+    <section id="calendar" class="w-full py-20 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto">
+
+            <div class="scroll-trigger opacity-0 translate-y-10 transition-all duration-1000 ease-out text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-[#3E3434] uppercase tracking-widest">
+                    World Economic <span class="text-[#9E2424]">Forum</span>
+                </h2>
+                <div class="h-1 w-24 bg-gradient-to-r from-[#9E2424] to-[#99754F] mx-auto mt-4 rounded-full"></div>
+                <p class="mt-4 text-[#AA9A79] font-medium">Davos, Switzerland • 19 - 23rd January 2026</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+                <div class="scroll-trigger opacity-0 translate-y-16 transition-all duration-1000 delay-200 ease-out group relative bg-white border border-[#AA9A79]/30 rounded-2xl overflow-hidden hover:shadow-2xl hover:-translate-y-2 hover:border-[#9E2424]/50">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#9E2424] to-[#3E3434] transition-all duration-500 group-hover:h-3">
+                    </div>
+                    <div class="p-8 md:p-10 flex flex-col h-full">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="bg-[#F5E6E0] p-3 rounded-lg text-[#9E2424] group-hover:scale-110 transition-transform duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="w-8 h-8">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <line x1="2" x2="22" y1="12" y2="12" />
+                                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                                </svg>
+                            </div>
+                            <span class="text-xs font-bold text-[#AA9A79] uppercase tracking-widest border border-[#AA9A79]/30 px-3 py-1 rounded-full group-hover:bg-[#AA9A79] group-hover:text-white transition-colors duration-300">
+                                20 - 01 - 2026
+                            </span>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-[#3E3434] mb-3 group-hover:text-[#9E2424] transition-colors">
+                            Transforming Africa's Investment Infrastructure
+                        </h3>
+                        <p class="text-[#644841] mb-6 leading-relaxed flex-grow">
+                            Join us for the launch of New Wind Ventures, turning fragmented African data into
+                            precision insights. Asset owners gain privileged access to Africa’s most selective
+                            investment opportunities.
+                        </p>
+
+                        <div class="mb-8">
+                            <p class="text-sm font-bold text-[#AA9A79] uppercase mb-3 tracking-widest">Post Event
+                                Preview</p>
+                            <div id="gallery-1" class="flex overflow-x-auto gap-3 pb-2 scrollbar-hide snap-x"></div>
+                        </div>
+
+                        <a href="javascript:void(0)"
+                            class="inline-flex items-center gap-2 text-[#9E2424] font-bold uppercase tracking-wide text-sm transition-all duration-300 opacity-50 cursor-not-allowed">
+                            Click here for Video recap
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-4 h-4">
+                                <path d="M5 12h14" />
+                                <path d="m12 5 7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="scroll-trigger opacity-0 translate-y-16 transition-all duration-1000 delay-400 ease-out group relative bg-white border border-[#AA9A79]/30 rounded-2xl overflow-hidden hover:shadow-2xl hover:-translate-y-2 hover:border-[#9E2424]/50">
+                    <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-[#99754F] to-[#AA9A79] transition-all duration-500 group-hover:h-3">
+                    </div>
+                    <div class="p-8 md:p-10 flex flex-col h-full">
+                        <div class="flex justify-between items-start mb-6">
+                            <div class="bg-[#F5E6E0] p-3 rounded-lg text-[#99754F] group-hover:scale-110 transition-transform duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round" class="w-8 h-8">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+                                    <circle cx="9" cy="7" r="4" />
+                                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+                                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                                </svg>
+                            </div>
+                            <span class="text-xs font-bold text-[#AA9A79] uppercase tracking-widest border border-[#AA9A79]/30 px-3 py-1 rounded-full group-hover:bg-[#AA9A79] group-hover:text-white transition-colors duration-300">
+                                22 - 01 - 2026
+                            </span>
+                        </div>
+
+                        <h3 class="text-2xl font-bold text-[#3E3434] mb-3 group-hover:text-[#99754F] transition-colors">
+                            The Accra Reset: Redefining The Sovereign Future
+                        </h3>
+                        <p class="text-[#644841] mb-6 leading-relaxed flex-grow">
+                            Davos is often a cacophony of competing agendas. We invite you to a moment of signal
+                            amidst the noise. How do we make sovereignty real in today’s world? Move from rhetoric
+                            to calculating moves on the geopolitical chessboard?
+                        </p>
+
+                        <div class="mb-8">
+                            <p class="text-sm font-bold text-[#AA9A79] uppercase mb-3 tracking-widest">Post Event
+                                Preview</p>
+                            <div id="gallery-2" class="flex overflow-x-auto gap-3 pb-2 scrollbar-hide snap-x"></div>
+                        </div>
+
+                        <a href="https://www.youtube.com/live/CvRE7uhADvY?si=SG9s1PYnJIGf6q-I" target="_blank"
+                            class="inline-flex items-center gap-2 text-[#9E242] font-bold uppercase tracking-wide text-sm hover:gap-4 transition-all duration-300 text-[#9E2424]">
+                            Click here for Video recap
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" class="w-4 h-4">
+                                <path d="M5 12h14" />
+                                <path d="m12 5 7 7-7 7" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="galleryModal"
+            class="fixed inset-0 z-[9999] hidden bg-[#3E3434]/95 backdrop-blur-md flex items-center justify-center opacity-0 transition-opacity duration-300">
+            <button onclick="closeModal()"
+                class="absolute top-6 right-6 text-white hover:text-[#9E2424] transition-colors p-2 z-50">
+                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 6 6 18" />
+                    <path d="m6 6 12 12" />
+                </svg>
+            </button>
+            <button onclick="changeSlide(-1)"
+                class="absolute left-4 md:left-8 text-white hover:text-[#9E2424] hover:scale-110 transition-all p-2 z-50 bg-black/20 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m15 18-6-6 6-6" />
+                </svg>
+            </button>
+            <div class="relative w-full max-w-5xl max-h-[85vh] p-4 flex items-center justify-center">
+                <img id="modalImage" src="" alt="Gallery Full"
+                    class="max-w-full max-h-[80vh] object-contain rounded shadow-2xl border border-[#AA9A79]/30">
+                <div class="absolute bottom-[-40px] text-[#AA9A79] text-sm tracking-widest font-bold">
+                    <span id="currentIndex">1</span> / 10
+                </div>
+            </div>
+            <button onclick="changeSlide(1)"
+                class="absolute right-4 md:right-8 text-white hover:text-[#9E2424] hover:scale-110 transition-all p-2 z-50 bg-black/20 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m9 18 6-6-6-6" />
+                </svg>
+            </button>
+        </div>
+
+        <script>
+            // ==========================================
+            // 1. DATA CONFIGURATION
+            // ==========================================
+            const galleries = {
+                'gallery1': [
+                    "images/WEF'26_AH_House-01.jpg.jpeg",
+                    "images/WEF'26_AH_House-02.jpg.jpeg",
+                    "images/WEF'26_AH_House-03.jpg.jpeg",
+                    "images/WEF'26_AH_House-04.jpg.jpeg",
+                    "images/WEF'26_AH_House-05.jpg.jpeg",
+                    "images/WEF'26_AH_House-06.jpg.jpeg",
+                    "images/WEF_26_AH_House-07.jpg.jpeg",
+                    "images/WEF_26_AH_House-08.jpg.jpeg",
+                    "images/WEF_26_AH_House-09.jpg.jpeg",
+                    "images/WEF_26_AH_House-10.jpg.jpeg"
+                ],
+                'gallery2': [
+                    "images/image-11.jpeg",
+                    "images/image-2.jpeg",
+                    "images/image-7.jpeg",
+                    "images/image-4.jpeg",
+                    "images/image-5.jpeg",
+                    "images/image-6.jpeg",
+                    "images/image-3.jpeg",
+                    "images/image-8.jpeg",
+                    "images/image-9.jpeg",
+                    "images/image-10.jpeg",
+                    "images/image-1.jpeg",
+                    "images/image-12.jpeg",
+                ]
+            };
+
+            let currentActiveGallery = [];
+            let currentImageIndex = 0;
+
+            // ==========================================
+            // 2. RENDER LOGIC (Updated with Animations)
+            // ==========================================
+            function renderGallery(containerId, galleryKey) {
+                const container = document.getElementById(containerId);
+                if (!container) return;
+
+                const images = galleries[galleryKey];
+                container.innerHTML = '';
+
+                if (images && images.length > 0) {
+                    images.forEach((url, index) => {
+                        const imgDiv = document.createElement('div');
+                        // Added group class for inner hover effect
+                        imgDiv.className = "flex-shrink-0 w-32 h-32 md:w-40 md:h-40 rounded-lg overflow-hidden cursor-pointer hover:shadow-lg transition-all duration-300 border border-[#AA9A79]/20 snap-center relative group";
+
+                        // Added transition-transform and group-hover:scale-110 to img
+                        imgDiv.innerHTML = `
+                            <img src="${url}" 
+                                 class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
+                                 alt="Gallery Image ${index + 1}" 
+                                 onclick="openModal('${galleryKey}', ${index})"
+                                 onerror="this.src='https://placehold.co/150x150?text=Missing';this.style.opacity=0.5;">
+                        `;
+                        container.appendChild(imgDiv);
+                    });
+                }
+            }
+
+            // Initialize
+            document.addEventListener('DOMContentLoaded', () => {
+                renderGallery('gallery-1', 'gallery1');
+                renderGallery('gallery-2', 'gallery2');
+
+                if (typeof lucide !== 'undefined') {
+                    lucide.createIcons();
+                }
+
+                // --- SCROLL ANIMATION OBSERVER ---
+                const observerOptions = {
+                    threshold: 0.15 // Trigger when 15% of element is visible
+                };
+
+                const scrollObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.remove('opacity-0', 'translate-y-10', 'translate-y-16');
+                            scrollObserver.unobserve(entry.target);
+                        }
+                    });
+                }, observerOptions);
+
+                const scrollElements = document.querySelectorAll('.scroll-trigger');
+                scrollElements.forEach(el => scrollObserver.observe(el));
+            });
+
+            // ==========================================
+            // 3. MODAL LOGIC
+            // ==========================================
+            const modal = document.getElementById('galleryModal');
+            const modalImg = document.getElementById('modalImage');
+            const indexDisplay = document.getElementById('currentIndex');
+
+            function openModal(galleryKey, index) {
+                currentActiveGallery = galleries[galleryKey];
+                currentImageIndex = index;
+
+                updateModalContent();
+                if (modal) {
+                    modal.classList.remove('hidden');
+                    setTimeout(() => { modal.classList.remove('opacity-0'); }, 10);
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+
+            function closeModal() {
+                if (modal) {
+                    modal.classList.add('opacity-0');
+                    setTimeout(() => { modal.classList.add('hidden'); }, 300);
+                    document.body.style.overflow = '';
+                }
+            }
+
+            function changeSlide(direction) {
+                currentImageIndex += direction;
+                if (currentImageIndex >= currentActiveGallery.length) currentImageIndex = 0;
+                if (currentImageIndex < 0) currentImageIndex = currentActiveGallery.length - 1;
+                updateModalContent();
+            }
+
+            function updateModalContent() {
+                if (modalImg) modalImg.src = currentActiveGallery[currentImageIndex];
+                if (indexDisplay) {
+                    indexDisplay.innerText = currentImageIndex + 1 + " / " + currentActiveGallery.length;
+                }
+            }
+
+            document.addEventListener('keydown', function (e) {
+                if (modal && modal.classList.contains('hidden')) return;
+                if (e.key === 'Escape') closeModal();
+                if (e.key === 'ArrowRight') changeSlide(1);
+                if (e.key === 'ArrowLeft') changeSlide(-1);
+            });
+
+            if (modal) {
+                modal.addEventListener('click', function (e) {
+                    if (e.target === modal) closeModal();
+                });
+            }
+
+            window.addEventListener('scroll', () => {
+                const header = document.querySelector('header');
+                if (header) {
+                    if (window.scrollY > 50) {
+                        header.classList.add('shadow-md');
+                    } else {
+                        header.classList.remove('shadow-md');
+                    }
+                }
+            });
+        </script>
+
+        <style>
+            .scrollbar-hide::-webkit-scrollbar {
+                display: none;
+            }
+
+            .scrollbar-hide {
+                -ms-overflow-style: none;
+                scrollbar-width: none;
+            }
+        </style>
+    </section>
+</main>
+
+   <footer class="footer-observer bg-[#3E3434] text-[#FFFFF5] border-t border-[#644841] overflow-hidden" id="press">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-16 mt-10">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+                <div
+                    class="footer-col opacity-0 translate-y-10 transition-all duration-1000 ease-out delay-100 space-y-6">
+                    <h3 class="text-2xl font-bold text-white">HERitage&reg; Collective.</h3>
+                    <p class="text-[#AA9A79] leading-relaxed font-normal max-w-sm">
+                        A launchpad for African women leaders and their champions. We gather Africa’s most dynamic women
+                        for powerful days of ideas, influence, and investment.
+                    </p>
+                    <div class="flex space-x-5">
+                        <a href="https://www.linkedin.com/company/heritagecollective" target="_blank"
+                            class="text-[#AA9A79] hover:text-[#FFFFF5] transition-all duration-300 transform hover:-translate-y-1 hover:scale-110">
+                            <i data-lucide="linkedin" class="h-6 w-6"></i>
+                        </a>
+                        <a href="https://www.instagram.com/heritage.collectiv/" target="_blank"
+                            class="text-[#AA9A79] hover:text-[#FFFFF5] transition-all duration-300 transform hover:-translate-y-1 hover:scale-110 hover:rotate-6">
+                            <i data-lucide="instagram" class="h-6 w-6"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@HERitageCollectiv" target="_blank"
+                            class="text-[#AA9A79] hover:text-[#FFFFF5] transition-all duration-300 transform hover:-translate-y-1 hover:scale-110 hover:-rotate-6">
+                            <i data-lucide="youtube" class="h-6 w-6"></i>
+                        </a>
+                    </div>
+                    <div class="h-px bg-[#644841] w-full"></div>
+                    <div class="space-y-2">
+                        <a href="mailto:info@heritagecollective.com"
+                            class="flex items-center gap-3 hover:text-[#9E2424] transition-colors duration-300 group">
+                            <div class="group-hover:scale-110 transition-transform duration-300">
+                                <i data-lucide="mail" class="h-5 w-5 text-[#AA9A79] group-hover:text-[#9E2424]"></i>
+                            </div>
+                            <span>info@heritagecollectiv.com</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="footer-col opacity-0 translate-y-10 transition-all duration-1000 ease-out delay-300">
+                    <h4 class="text-lg font-semibold text-white mb-6">Contact & Locations</h4>
+                    <div class="space-y-6 text-[#AA9A79]">
+                        <div class="space-y-4">
+                            <div class="flex gap-3 items-start group cursor-default">
+                                <i data-lucide="map-pin"
+                                    class="h-5 w-5 text-[#9E2424] mt-1 shrink-0 group-hover:animate-bounce"></i>
+                                <div>
+                                    <span class="block text-white font-medium text-sm uppercase tracking-wide">Nigeria
+                                        Office</span>
+                                    <span class="text-sm">HERitage House, Abuja,<br>FCT, Nigeria.</span>
+                                </div>
+                            </div>
+                            <div class="flex gap-3 items-start group cursor-default">
+                                <i data-lucide="map-pin"
+                                    class="h-5 w-5 text-[#9E2424] mt-1 shrink-0 group-hover:animate-bounce"></i>
+                                <div>
+                                    <span class="block text-white font-medium text-sm uppercase tracking-wide">Rwanda
+                                        Office</span>
+                                    <span class="text-sm">KG 54 Avenue, Kigali,<br>Rwanda.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <a href="/partner.html"
+                                class="group flex items-start gap-3 hover:translate-x-2 transition-transform duration-300">
+                                <div class="bg-[#644841] p-2 rounded group-hover:bg-[#9E2424] transition duration-300">
+                                    <i data-lucide="shield-check"
+                                        class="h-5 w-5 text-[#AA9A79] group-hover:text-white"></i>
+                                </div>
+                                <div>
+                                    <span
+                                        class="block text-white font-medium group-hover:text-[#9E2424] transition">Privacy
+                                        Policy</span>
+                                    <span class="text-xs text-[#AA9A79]">Data protection & terms</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-col opacity-0 translate-y-10 transition-all duration-1000 ease-out delay-500">
+                    <h4 class="text-lg font-semibold text-white mb-6">Latest News & Blog</h4>
+                    <ul class="space-y-4">
+                        <li>
+                            <a href="https://www.theafricanexus.ma/?p=6104" target="_blank"
+                                class="group flex items-start gap-3 p-2 rounded-lg hover:bg-[#644841]/20 transition-all duration-300 hover:translate-x-2">
+                                <div
+                                    class="bg-[#644841] p-2 rounded group-hover:bg-[#9E2424] transition duration-300 shrink-0">
+                                    <i data-lucide="newspaper"
+                                        class="h-5 w-5 text-[#AA9A79] group-hover:text-white"></i>
+                                </div>
+                                <div>
+                                    <span
+                                        class="block text-white font-medium group-hover:text-[#9E2424] transition leading-tight">Makers
+                                        of the Desired Hope: Women and Youth at the Heart of Africa’s Peace Efforts in
+                                        Nouakchott.</span>
+                                    <span class="text-xs text-[#AA9A79] mt-1 block">Feb 16, 2026</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.letemps.ch/economie/new-wind-ventures-la-start-up-vaudoise-qui-veut-reduire-les-risques-lies-a-l-investissement-en-afrique"
+                                target="_blank"
+                                class="group flex items-start gap-3 p-2 rounded-lg hover:bg-[#644841]/20 transition-all duration-300 hover:translate-x-2">
+                                <div
+                                    class="bg-[#644841] p-2 rounded group-hover:bg-[#9E2424] transition duration-300 shrink-0">
+                                    <i data-lucide="newspaper"
+                                        class="h-5 w-5 text-[#AA9A79] group-hover:text-white"></i>
+                                </div>
+                                <div>
+                                    <span
+                                        class="block text-white font-medium group-hover:text-[#9E2424] transition leading-tight">New
+                                        Wind Ventures, the Vaud-based startup aiming to reduce the risks associated with
+                                        investing in Africa.</span>
+                                    <span class="text-xs text-[#AA9A79] mt-1 block">Feb 7, 2026</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.naijapreneur.com/from-context-to-capital-heritage-collectives-roundtable-brokers-concrete-deals-for-nigerias-real-economy/?utm_source=chatgpt.com"
+                                target="_blank"
+                                class="group flex items-start gap-3 p-2 rounded-lg hover:bg-[#644841]/20 transition-all duration-300 hover:translate-x-2">
+                                <div
+                                    class="bg-[#644841] p-2 rounded group-hover:bg-[#9E2424] transition duration-300 shrink-0">
+                                    <i data-lucide="newspaper"
+                                        class="h-5 w-5 text-[#AA9A79] group-hover:text-white"></i>
+                                </div>
+                                <div>
+                                    <span
+                                        class="block text-white font-medium group-hover:text-[#9E2424] transition leading-tight">From
+                                        Context to Capital: Heritage Collective’s Roundtable Brokers Concrete Deals
+                                    </span>
+                                    <span class="text-xs text-[#AA9A79] mt-1 block">Dec 12, 2025</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://yourluxury.africa/wealth/women-shaping-africas-economic-future/"
+                                target="_blank"
+                                class="group flex items-start gap-3 p-2 rounded-lg hover:bg-[#644841]/20 transition-all duration-300 hover:translate-x-2">
+                                <div
+                                    class="bg-[#644841] p-2 rounded group-hover:bg-[#9E2424] transition duration-300 shrink-0">
+                                    <i data-lucide="newspaper"
+                                        class="h-5 w-5 text-[#AA9A79] group-hover:text-white"></i>
+                                </div>
+                                <div>
+                                    <span
+                                        class="block text-white font-medium group-hover:text-[#9E2424] transition leading-tight">Women
+                                        Shaping Africa’s Economic Future</span>
+                                    <span class="text-xs text-[#AA9A79] mt-1 block">Nov 12, 2025</span>
+                                </div>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a href="https://africa.businessinsider.com/local/leaders/heritage-collective-a-bold-new-platform-to-elevate-african-womens-leadership-launches/cekeq1y?utm_source=chatgpt.com"
+                                target="_blank"
+                                class="group flex items-start gap-3 p-2 rounded-lg hover:bg-[#644841]/20 transition-all duration-300 hover:translate-x-2">
+                                <div
+                                    class="bg-[#644841] p-2 rounded group-hover:bg-[#9E2424] transition duration-300 shrink-0">
+                                    <i data-lucide="newspaper"
+                                        class="h-5 w-5 text-[#AA9A79] group-hover:text-white"></i>
+                                </div>
+                                <div>
+                                    <span
+                                        class="block text-white font-medium group-hover:text-[#9E2424] transition leading-tight">HERitage
+                                        Collective.: A bold new platform to elevate African women’s leadership .</span>
+                                    <span class="text-xs text-[#AA9A79] mt-1 block">May 26, 2025</span>
+                                </div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://omny.fm/shows/africa-rise-shine/heritage-collection-launched-to-empower-emerging-african-women-leaders-1"
+                                target="_blank"
+                                class="group flex items-start gap-3 p-2 rounded-lg hover:bg-[#644841]/20 transition-all duration-300 hover:translate-x-2">
+                                <div
+                                    class="bg-[#644841] p-2 rounded group-hover:bg-[#9E2424] transition duration-300 shrink-0">
+                                    <i data-lucide="newspaper"
+                                        class="h-5 w-5 text-[#AA9A79] group-hover:text-white"></i>
+                                </div>
+                                <div>
+                                    <span
+                                        class="block text-white font-medium group-hover:text-[#9E2424] transition leading-tight">Global
+                                        Voices of the Collective: Channel Africa.</span>
+                                    <span class="text-xs text-[#AA9A79] mt-1 block">May 25, 2025</span>
+                                </div>
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="footer-col opacity-0 border-t border-[#644841] mt-16 pt-8 text-center transition-opacity duration-1000 delay-700">
+                <p class="text-sm text-[#AA9A79]">
+                    © 2026 HERitage Collective. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const footerObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const columns = entry.target.querySelectorAll('.footer-col');
+                        columns.forEach(col => {
+                            col.classList.remove('opacity-0', 'translate-y-10');
+                        });
+                        footerObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.2 });
+
+            const footerSection = document.querySelector('.footer-observer');
+            if (footerSection) footerObserver.observe(footerSection);
+        });
+    </script>
+
+    <script>
+        // Initialize Icons
+        lucide.createIcons();
+
+        // Mobile menu functionality
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        const closeIcon = document.getElementById('close-icon');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 50) {
+                header.classList.add('shadow-md');
+            } else {
+                header.classList.remove('shadow-md');
+            }
+        });
+    </script>
+</body>
+
+</html>
