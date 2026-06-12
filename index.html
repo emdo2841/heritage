@@ -10,15 +10,26 @@
     <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
-
+    <!-- 2. AUTOMATIC JAVASCRIPT FORCE-REFRESH: If the browser ignores the meta tags, this forces a background refresh when the file updates -->
+    <script>
+        // We set a hardcoded deployment version here. Change this number (e.g., to '1.0.2') whenever you push an update!
+        const CURRENT_VERSION = '1.0.1'; 
+        
+        const localVersion = localStorage.getItem('site_version');
+        if (localVersion !== CURRENT_VERSION) {
+            localStorage.setItem('site_version', CURRENT_VERSION);
+            // Clear browser cache for this page and force reload from server
+            window.location.reload(true);
+        }
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
     <link href="./dist/output.css?v=1.1" rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
-
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js?v=1.0.1"></script>
+    
     <script>
         tailwind.config = {
             theme: {
